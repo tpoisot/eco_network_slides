@@ -20,6 +20,36 @@
    \end{itemize}
 \end{frame}
 
+\begin{frame}{What is a network?}{A mathematical approach}
+   A \emph{graph} is a \textbf{representation} of a \textbf{set of objects} where some pairs of objects are \textbf{connected} by \textbf{links}.
+   \vskip 2em
+   Or more formally, $G = (V,E)$, a \emph{graph} $G$ is an ordered pair of \emph{vertices} $V$ linked together by \emph{edges} $E$.
+   \vskip 2em
+   Each element of $E$ is a two-element subset of $V$.
+   \vskip 2em
+   The \emph{order} of a graph is $|V|$, and its \emph{size} is $|E|$.
+\end{frame}
+
+\begin{frame}{What is a network?}{An example}
+   In an omnivory scenario, one top predator $P$ consumes both an intermediate consumer $C$ and a primary producer $R$. The intermediate consumer also consumes the producer.
+   \vskip 2em
+   This network is specified by
+   $$G = \left(\{P, C, R\},\{\{P,C\},\{P,R\},\{C,R\}\}\right) $$
+   \vskip 2em
+   Or for brevity
+   $$G = \left(\{P, C, R\},\{PC,PR,CR\}\right) $$
+\end{frame}
+
+\begin{frame}{What is a network?}{Edge direction}
+   Edges can be \emph{directed} (arcs, directed edges) or not. An edge between a vertex and itself (cannibalism) is a \emph{self-loop}.
+   \vskip 2em
+   In an \textbf{undirected graph}, there are at most $|V|(|V|-1)/2$ edges if there are no \emph{self-loops}.
+   \vskip 2em
+   In a \textbf{directed graph}, there are at most $|V|(|V|-1)$ edges if there are no \emph{self-loops}.
+   \vskip 2em
+   \alert{\textbf{Exercice}}: What is the maximal size of a graph of order $n$ if there are self-loops?
+\end{frame}
+
 \begin{frame}
 	\begin{center}
 	\textbf{\large Thank you very much!}\vskip 3em
