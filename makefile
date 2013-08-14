@@ -1,5 +1,5 @@
 pdf: slides-networks.tex slides-networks.pdf
-	pdflatex slides-networks.tex
+	pdflatex --shell-escape slides-networks.tex
 
 clean:
 	rm *.aux
