@@ -1,4 +1,4 @@
-pdf: slides-networks.tex slides-networks.pdf
+pdf: slides-networks.tex 
 	pdflatex --shell-escape slides-networks.tex
 
 clean:

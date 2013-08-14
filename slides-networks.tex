@@ -84,12 +84,31 @@
 
 \section{Network-level properties}
 
+\begin{frame}{Connectance}
+   Connectance is the \emph{proportion of possible interactions realized}
+   \vskip 2em
+   The order of an ecological network is usually called $S$, and its size $L$
+   \vskip 2em
+   In a network with directed edges and self-loops, the connectance is $Co = L/S^2$
+   \vskip 2em
+   \alert{Exercice}: What is the expression of the connectance for directed/undirected networks with/without self-edges?
+\end{frame}
+
 \section{Vertex-level properties}
 
 \begin{frame}{Number of partners}
    The number of (\emph{e.g.}) preys of a predator is its \textbf{generality} (number of successors)
    \vskip 2em
    The number of (\emph{e.g.}) predators of a prey is its \textbf{vulnerability} (number of predecessors)
+\end{frame}
+
+\begin{frame}[fragile]{Number of partners}
+   \begin{minted}[linenos]{splus}
+      web = read.table('web.dat')
+      generality = rowSums(web)
+      vulnerability = colSums(web)
+      degree = generality + vulnerability
+   \end{minted}
 \end{frame}
 
 \section{Generating networks}
