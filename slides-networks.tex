@@ -76,6 +76,83 @@
    The \emph{total} number of edges connected to a focal vertex is this vertex \textbf{degree}
 \end{frame}
 
+\begin{frame}{Some remarks on degrees}
+   In a graph with $n$ nodes, the degree $k$ of a node $i$ is $k_i = \sum_{j=1}^n A_{ij}$ (\emph{iff} the graph is undirected).
+   \vskip 2em
+   If there are $m$ edges, there are $2m$ \emph{ends} of edges, with $2m = \sum_{i=1}^nk_i$. In an undirected graph, this is equal to the sum of degrees.
+   \vskip 2em
+   Thus, $m = \frac{1}{2}\sum_{i=1}^nk_i = \frac{1}{2}\sum_i\sum_j A_{ij}$
+   \vskip 2em
+   As the mean degree of nodes is simply $c = \frac{1}{n}\sum k_i$, we can write $c = \frac{2m}{n} $.
+\end{frame}
+
+\begin{frame}{Some exercices on degrees}
+   \alert{Exercice(s)}:
+   \vskip 2em
+   Using the same approach, find \textbf{the expression of the mean number of predecessors and successors} in a directed graph.
+   \vskip 1em
+   Discuss the relationship between these two values.
+   \vskip 1em
+   Is the mean degree different in a directed/undirected network?
+\end{frame}
+
+\begin{frame}{Unipartite and bipartite graphs}
+   In a \textbf{bipartite} graph, vertices are divided into two distinct sets, with edges established between two vertices from \emph{different} sets.
+   \vskip 2em
+   This do not happen in \textbf{unipartite} graphs.
+   \vskip 2em
+   \alert{Exercice}: Discuss the application of bipartite and unipartite networks to ecological systems.
+   \vskip 2em
+   In a bipartite graph, the adjacency matrix is (formally) called the \textbf{incidence matrix}.
+\end{frame}
+
+\begin{frame}{Trees and cycles}
+
+\end{frame}
+
+\section{Paths, shortest paths, and some fun with matrices}
+
+\begin{frame}{Paths}
+   A \textbf{path} is a sequence of nodes, so that every consecutive pair of nodes are connected through an edge. You can ``walk'' along edges from the first to the last node along a patho.
+   \vskip 2em
+   The \textbf{length} of a path is the number of \emph{edges} in that path.
+   \vskip 2em
+   If nodes $i$ and $j$ are connected, then \emph{there is a path of length 1 between them}. If they are connected through $k$, there is \emph{a path of length 2}.
+\end{frame}
+
+\begin{frame}{Reminder: multiplying matrices}
+   \begin{itemize}
+      \item Only \emph{square} matrices can be raised to an exponent (\alert{Exercice}: What of bipartite rectangular networks?)
+      \item $(\mathbf{AB})_{ij} = \sum_{p=1}^m A_{ik} B_{jk}$
+      \item $\mathbf{A}^0 = \mathbf{I}$
+      \item $\mathbf{A}^2 = \mathbf{A}\mathbf{A}$
+      \item $(r\mathbf{A})^k = r^k\mathbf{A}^k$
+      \item $\mathrm{det}(\mathbf{A}^k) = \mathrm{det}(\mathbf{A})^k$ because $\mathrm{det}(\mathbf{A}\mathbf{B}) = \mathrm{det}(\mathbf{A})\mathrm{det}(\mathbf{B})$
+   \end{itemize}
+\end{frame}
+
+\begin{frame}{Number of paths}
+   The number of paths of length $2$ between $i$ and $j$ is given by $$N^{(2)}_{ij} = \sum{k=1}^nA_{ik}A_{kj}$$.
+   \vskip 2em
+   This is generalized for paths of length $n$ to $$N^{(n)}_{ij} = (\mathbf{A}^n)_{ij} $$.
+\end{frame}
+
+\begin{frame}{Number of paths}{Find the number of cycles}
+   Based on the previous result, we can identify the number of paths of size $n$ from one node to itself, $(\mathbf{A}^n)_{ii}$.
+   \vskip 2em
+   Because for square matrices, $\mathrm{Tr}(\mathbf{A}) = \sum\mathrm{diag}(\mathbf{A})$, the \emph{total number of cycles of length $n$} is given by $L_{n} = \mathrm{Tr}(\mathbf{A}^n)$.
+\end{frame}
+
+\begin{frame}{Identify the shortest path}
+   A \textbf{very crude} way to find the shortest path between $i$ and $j$ is to find the \emph{smallest value of $n$} for which $(\mathbf{A}^n)_{ij} > 0$.
+   \vskip 2em
+   The shortest path is called the \textbf{geodesic} path.
+   \vskip 2em
+   This method in inefficient, and modern software implements much better search strategies.
+\end{frame}
+
+\section{A little bit of ecology}
+
 \begin{frame}{Where is the ecology in all that?}
    \begin{description}
       \item[graph] The whole community, \emph{i.e.} the populations and their interactions
@@ -101,13 +178,13 @@
 \section{Network-level properties}
 
 \begin{frame}{Connectance}
-   Connectance is the \emph{proportion of possible interactions realized}
+   Connectance is the \emph{proportion of possible interactions realized} (also called the density $\rho$ in graph theory)
    \vskip 2em
    The order of an ecological network is usually called $S$, and its size $L$
    \vskip 2em
-   In a network with directed edges and self-loops, the connectance is $Co = L/S^2$
+   Ecologists often define connectance as $Co = L/S^2$.
    \vskip 2em
-   \alert{Exercice}: What is the expression of the connectance for directed/undirected networks with/without self-edges?
+   \alert{Exercice}: What do you think of this definition based on results about the maximal order of a graph or size $S$?
 \end{frame}
 
 \section{Vertex-level properties}
@@ -128,6 +205,16 @@
 \end{frame}
 
 \section{Generating networks}
+
+\begin{frame}{Null models}{The ecological use}
+   
+\end{frame}
+
+\begin{frame}{Null models}{The basic approach}
+\end{frame}
+
+\begin{frame}{Null models}{Controlling for mean degree}
+\end{frame}
 
 \begin{frame}{The niche model of food webs}
 
