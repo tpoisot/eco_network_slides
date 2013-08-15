@@ -1,7 +1,7 @@
 viewer = xpdf
 
 pdf: slides-networks.tex 
-	pdflatex --shell-escape slides-networks.tex
+	pdflatex --shell-escape -interaction=nonstopmode slides-networks.tex
 
 view:
 	$(viewer) slides-networks.pdf

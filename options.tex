@@ -1,79 +1,17 @@
-\usepackage{textpos}
-\usepackage{textcomp}
-
 \usepackage{minted}
 
-\usepackage{pgfplots}
-\usepackage{pgfplotstable}
-\pgfplotsset{compat=newest}
-\usetikzlibrary{shapes,backgrounds}
-\usepgfplotslibrary{ternary}
-\usepgfplotslibrary{external} 
-%\tikzexternalize
+\newcommand\paper[1]{%
+  \begin{textblock*}{\paperwidth}(2pt,0.98\textheight)
+    \raggedleft{\tiny #1}\hspace{.5em}
+  \end{textblock*}}
 
 \usepackage[utf8]{inputenc}
 \usepackage{lmodern}
-\usepackage{cmbright}
 \usepackage[protrusion=true,expansion=true]{microtype}
 \usepackage[normalem]{ulem} 
 \usepackage{amsmath}
 
 %%%%%%%%% COLORS
 
-\definecolor{RYB1}{RGB}{102, 217, 239}
-\definecolor{RYB2}{RGB}{249, 38, 114}
-\definecolor{RYB3}{RGB}{166, 226, 46}
-\definecolor{RYB4}{RGB}{253, 151, 31}
-\definecolor{RYB5}{RGB}{196, 141, 255}
-
-\definecolor{RYB1}{RGB}{228, 26, 28}
-\definecolor{RYB2}{RGB}{55, 126, 184}
-\definecolor{RYB3}{RGB}{77, 175, 74}
-\definecolor{RYB4}{RGB}{152, 78, 163}
-\definecolor{RYB5}{RGB}{255, 127, 0}
-
+\setbeamercovered{dynamic}
 \usetheme{default}
-
-\beamertemplatenavigationsymbolsempty
-
-\definecolor{fore}{RGB}{31,31,31}
-\definecolor{title}{RGB}{0,0,0}
-
-
-\usepackage[charter]{mathdesign}
-\usepackage{bera}
-\usefonttheme{serif}
-
-\setbeamercolor{titlelike}{fg=title}
-\setbeamercolor{structure}{fg=RYB3}
-\setbeamercolor{normal text}{fg=fore}
-%\setbeamertemplate{background canvas}[vertical shading][top=blue!5,middle=black!3,bottom=black!1]
-
-\tikzset{
-	every mark/.append style={scale=0.6},
-	every axis legend/.append style = {draw=none, fill=black!4, cells = {anchor=west}, font = \tiny},
-	every axis grid/.append style = {color=black!60, dotted}
-	}
-	
-\pgfplotscreateplotcyclelist{monokai}{%
-	RYB1,every mark/.append style={fill=RYB1},mark=*\\%
-	RYB2,every mark/.append style={fill=RYB2},mark=*\\%
-	RYB3,every mark/.append style={fill=RYB3},mark=*\\%
-	RYB4,every mark/.append style={fill=RYB4},mark=*\\%
-	RYB5,every mark/.append style={fill=RYB5},mark=*\\%
-}
-	
-\def\MyAlign{%
-    \pgfresetboundingbox
-    \path (current axis.south west) rectangle (current axis.north east);
-}
-
-\usepackage{wallpaper}
-\setbeamertemplate{background canvas}{
-  \TileWallPaper{4cm}{4cm}{groovepaper}
-}
-
-\setbeamerfont{title}{size=\Large,series=\bfseries\sffamily,parent=structure}
-\setbeamerfont{subtitle}{size=\normalsize, shape=\itshape, parent=title}
-\setbeamerfont{author}{size=\small, series=\bfseries}
-\setbeamerfont{date}{size=\tiny, series=\bfseries}
