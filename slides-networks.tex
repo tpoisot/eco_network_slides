@@ -42,6 +42,14 @@
    $$G = \left(\{P, C, R\},\{PC,PR,CR\}\right) $$
 \end{frame}
 
+\begin{frame}{What is a network?}{The adjacency matrix}
+   Networks are often represented by their \textbf{adjacency matrix}.
+   \vskip 2em
+   The adjacency matrix $\mathbf{A}$ of a graph $G = (V,E)$ has elements $A_{ij}$ with value 1 if there is an edge between the node $V_i$ and the node $V_j$, and 0 otherwise.
+   \vskip 2em
+   It follows that $\sum_i\sum_j A_{ij} = |E|$.
+\end{frame}
+
 \begin{frame}{What is a network?}{Edge direction}
    Edges can be \emph{directed} (arcs, directed edges) or not. An edge between a vertex and itself (cannibalism) is a \emph{self-loop}.
    \vskip 2em
@@ -50,6 +58,14 @@
    In a \textbf{directed graph}, there are at most $|V|(|V|-1)$ edges if there are no \emph{self-loops}.
    \vskip 2em
    \alert{Exercice}: What is the maximal size of a graph of order $n$ if there are self-loops?
+\end{frame}
+
+\begin{frame}{What is a network?}{Edge weight}
+   Edges in a network can have a \textbf{weight} (for example, the number of contacts between individuals).
+   \vskip 2em
+   The elements of the adjacency matrix $\mathbf{A}$ can be given \emph{continuous} values.
+   \vskip 2em
+   It's possible to work both on the \emph{weighted} and \emph{unweighted} properties of a graph. \alert{However}, there are many methods that (as of now) can only be applied to \textbf{undirected, unweighted} networks.
 \end{frame}
 
 \begin{frame}{Number of partners}

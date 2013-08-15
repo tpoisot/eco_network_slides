@@ -1,5 +1,10 @@
+viewer = xpdf
+
 pdf: slides-networks.tex 
 	pdflatex --shell-escape slides-networks.tex
+
+view:
+	$(viewer) slides-networks.pdf
 
 clean:
 	rm *.aux
@@ -8,5 +13,6 @@ clean:
 	rm *.out
 	rm *.snm
 	rm *.toc
+	rm *.vrb
 
 
