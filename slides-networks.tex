@@ -1,4 +1,4 @@
-\documentclass[serif,mathserif,usenames,professionalfonts,10pt,aspectratio=149]{beamer}
+\documentclass[serif,mathserif,usenames,professionalfonts,11pt,aspectratio=149]{beamer}
 
 \input{options}
 
@@ -149,6 +149,15 @@
    The shortest path is called the \textbf{geodesic} path.
    \vskip 2em
    This method in inefficient, and modern software implements much better search strategies.
+\end{frame}
+
+\begin{frame}{Other remarkable paths}
+   An \textbf{Eulerian path} visits each \emhh{edge} once. The graph is Eulerian (unicursal) if this path is a cycle, and semi-Eulerian (traversable) if not.
+   \vskip 2em
+   A \textbf{Hamiltonian path} visits each \emph{node} once. A graph with a Hamiltonian path is traceable.
+   \vskip 2em
+   \alert{Exercice}: Proove that for a complete undirected graph with $n$ nodes, there are $(n-1)!/2$ Hamiltonian paths.
+
 \end{frame}
 
 \section{A little bit of ecology}

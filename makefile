@@ -1,4 +1,4 @@
-viewer = xpdf
+viewer = zathura
 
 pdf: slides-networks.tex 
 	pdflatex --shell-escape -interaction=nonstopmode slides-networks.tex
