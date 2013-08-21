@@ -1,0 +1,13 @@
+\centering
+\begin{tikzpicture}[auto, ->, =>stealth', shorten >=1pt, thick]
+
+\tikzstyle{every node}=[circle, fill=black, draw=black!80, text=white]
+\draw    (0,   3)    node (pred) {P}
+         (1.2, 1.5)  node (cons) {C}
+         (0,   0)    node (ress) {R};
+
+\draw (pred) -> (cons);
+\draw (pred) -> (ress);
+\draw (cons) -> (ress);
+
+\end{tikzpicture}

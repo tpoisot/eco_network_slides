@@ -14,5 +14,5 @@ clean:
 	rm *.snm
 	rm *.toc
 	rm *.vrb
-
+	rm *.pyg
 

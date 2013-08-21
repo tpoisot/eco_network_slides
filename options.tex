@@ -6,15 +6,43 @@
   \end{textblock*}}
 
 \usepackage[utf8]{inputenc}
-\usepackage{lmodern}
+\usepackage[T1]{fontenc}
 \usepackage[protrusion=true,expansion=true]{microtype}
 \usepackage[normalem]{ulem} 
 \usepackage{amsmath}
 
-\usepackage{kpfonts}
+\usepackage[loosequotes,slides]{MinionPro}
 
-\usefonttheme{serif}
+\usepackage[defaultsans]{droidsans}
+
+\usepackage{tikz}
 
 %%%%%%%%% COLORS
 
-\setbeamercovered{dynamic}
+\definecolor{clouds}{HTML}{ECF0F1}
+
+\definecolor{belize}{HTML}{2980B9}
+\definecolor{peter}{HTML}{3498DB}
+
+\definecolor{pomegranate}{HTML}{C0392B}
+
+\definecolor{turquoise}{HTML}{1ABC9C}
+
+\definecolor{midnight}{HTML}{2C3E50}
+
+%\setbeamertemplate{background canvas}[vertical shading][top=clouds, bottom=clouds]
+
+\setbeamercolor{normal text}{fg = midnight}
+\setbeamercolor{alerted text}{fg = pomegranate}
+
+\setbeamercolor{frametitle}{fg = belize}
+\setbeamercolor{framesubtitle}{fg = peter}
+
+\setbeamercolor{structure}{fg = turquoise}
+
+%%%%%%%% FONTS
+
+\setbeamerfont{title}{series=\sffamily}
+\setbeamerfont{subtitle}{series=\sffamily}
+\setbeamerfont{frametitle}{series=\sffamily}
+\setbeamerfont{framesubtitle}{series=\sffamily}

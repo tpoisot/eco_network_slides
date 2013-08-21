@@ -35,11 +35,18 @@
 \begin{frame}{What is a network?}{An example}
    In an omnivory scenario, one top predator $P$ consumes both an intermediate consumer $C$ and a primary producer $R$. The intermediate consumer also consumes the producer.
    \vskip 2em
-   This network is specified by
-   $$G = \left(\{P, C, R\},\{\{P,C\},\{P,R\},\{C,R\}\}\right) $$
-   \vskip 2em
-   Or for brevity
-   $$G = \left(\{P, C, R\},\{PC,PR,CR\}\right) $$
+   \begin{columns}[c]
+      \begin{column}{0.5\textwidth}
+         This network is specified by
+         $$G = \left(\{P, C, R\},\{\{P,C\},\{P,R\},\{C,R\}\}\right) $$
+         \vskip 1em
+         Or for brevity
+         $$G = \left(\{P, C, R\},\{PC,PR,CR\}\right) $$
+      \end{column}
+      \begin{column}{0.5\textwidth}
+         \input{tik/diamond.tikz}
+      \end{column}
+   \end{columns}
 \end{frame}
 
 \begin{frame}{What is a network?}{The adjacency matrix}
@@ -152,7 +159,7 @@
 \end{frame}
 
 \begin{frame}{Other remarkable paths}
-   An \textbf{Eulerian path} visits each \emhh{edge} once. The graph is Eulerian (unicursal) if this path is a cycle, and semi-Eulerian (traversable) if not.
+   An \textbf{Eulerian path} visits each \emph{edge} once. The graph is Eulerian (unicursal) if this path is a cycle, and semi-Eulerian (traversable) if not.
    \vskip 2em
    A \textbf{Hamiltonian path} visits each \emph{node} once. A graph with a Hamiltonian path is traceable.
    \vskip 2em
