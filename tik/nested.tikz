@@ -1,0 +1,32 @@
+\centering
+\begin{tikzpicture}[auto, ->, =>stealth', shorten >=1pt, thick]
+
+\tikzstyle{every node}=[circle, fill=turquoise, draw=none, text=white]
+\draw    (0,   0)    node (p0) {}
+         (0,   1)    node (p1) {}
+         (0,   2)    node (p2) {}
+         (0,   3)    node (p3) {};
+
+\tikzstyle{every node}=[circle, fill=pomegranate, draw=none, text=white]
+\draw    (2,   0)    node (f0) {}
+         (2,   1)    node (f1) {}
+         (2,   2)    node (f2) {}
+         (2,   3)    node (f3) {};
+
+\draw (p0) -> (f0);
+\draw (p0) -> (f1);
+\draw (p0) -> (f2);
+\draw (p0) -> (f3);
+
+\draw (p1) -> (f0);
+\draw (p1) -> (f1);
+\draw (p1) -> (f2);
+
+\draw (p2) -> (f0);
+\draw (p2) -> (f1);
+
+\draw (p3) -> (f0);
+
+
+
+\end{tikzpicture}

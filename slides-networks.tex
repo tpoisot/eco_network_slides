@@ -1,4 +1,4 @@
-\documentclass[serif,mathserif,usenames,professionalfonts,11pt,aspectratio=149]{beamer}
+\documentclass[usenames,professionalfonts,11pt,aspectratio=149]{beamer}
 
 \input{options}
 
@@ -64,7 +64,7 @@
    \vskip 2em
    In a \textbf{directed graph}, there are at most $|V|(|V|-1)$ edges if there are no \emph{self-loops}.
    \vskip 2em
-   \alert{Exercice}: What is the maximal size of a graph of order $n$ if there are self-loops?
+   \alert{Exercise}: What is the maximal size of a graph of order $n$ if there are self-loops?
 \end{frame}
 
 \begin{frame}{What is a network?}{Edge weight}
@@ -93,8 +93,8 @@
    As the mean degree of nodes is simply $c = \frac{1}{n}\sum k_i$, we can write $c = \frac{2m}{n} $.
 \end{frame}
 
-\begin{frame}{Some exercices on degrees}
-   \alert{Exercice(s)}:
+\begin{frame}{Some exercises on degrees}
+   \alert{Exercise(s)}:
    \vskip 2em
    Using the same approach, find \textbf{the expression of the mean number of predecessors and successors} in a directed graph.
    \vskip 1em
@@ -108,7 +108,7 @@
    \vskip 2em
    This do not happen in \textbf{unipartite} graphs.
    \vskip 2em
-   \alert{Exercice}: Discuss the application of bipartite and unipartite networks to ecological systems.
+   \alert{Exercise}: Discuss the application of bipartite and unipartite networks to ecological systems.
    \vskip 2em
    In a bipartite graph, the adjacency matrix is (formally) called the \textbf{incidence matrix}.
 \end{frame}
@@ -120,7 +120,7 @@
 \section{Paths, shortest paths, and some fun with matrices}
 
 \begin{frame}{Paths}
-   A \textbf{path} is a sequence of nodes, so that every consecutive pair of nodes are connected through an edge. You can ``walk'' along edges from the first to the last node along a patho.
+   A \textbf{path} is a sequence of nodes, so that every consecutive pair of nodes are connected through an edge. You can ``walk'' along edges from the first to the last node along a path.
    \vskip 2em
    The \textbf{length} of a path is the number of \emph{edges} in that path.
    \vskip 2em
@@ -129,7 +129,7 @@
 
 \begin{frame}{Reminder: multiplying matrices}
    \begin{itemize}
-      \item Only \emph{square} matrices can be raised to an exponent (\alert{Exercice}: What of bipartite rectangular networks?)
+      \item Only \emph{square} matrices can be raised to an exponent (\alert{Exercise}: What of bipartite rectangular networks?)
       \item $(\mathbf{AB})_{ij} = \sum_{p=1}^m A_{ik} B_{jk}$
       \item $\mathbf{A}^0 = \mathbf{I}$
       \item $\mathbf{A}^2 = \mathbf{A}\mathbf{A}$
@@ -163,7 +163,7 @@
    \vskip 2em
    A \textbf{Hamiltonian path} visits each \emph{node} once. A graph with a Hamiltonian path is traceable.
    \vskip 2em
-   \alert{Exercice}: Proove that for a complete undirected graph with $n$ nodes, there are $(n-1)!/2$ Hamiltonian paths.
+   \alert{Exercise}: Prove that for a complete undirected graph with $n$ nodes, there are $(n-1)!/2$ Hamiltonian paths.
 
 \end{frame}
 
@@ -177,7 +177,7 @@
    \end{description}
 \end{frame}
 
-\begin{frame}{Where is the ecology in all that?}{Exemple of ``networkable'' systems}
+\begin{frame}{Where is the ecology in all that?}{Example of ``networkable'' systems}
    \begin{itemize}
       \item Trophic systems
       \item Plant--pollinators
@@ -200,7 +200,7 @@
    \vskip 2em
    Ecologists often define connectance as $Co = L/S^2$.
    \vskip 2em
-   \alert{Exercice}: What do you think of this definition based on results about the maximal order of a graph or size $S$?
+   \alert{Exercise}: What do you think of this definition based on results about the maximal order of a graph or size $S$?
 \end{frame}
 
 \section{Vertex-level properties}
@@ -223,7 +223,31 @@
 \section{Generating networks}
 
 \begin{frame}{Null models}{The ecological use}
-   
+   Even just \emph{by chance}, networks will have statistical properties. The truth is in the residuals.
+   \vskip 2em
+   \textbf{Null models} allow to disentangle the random and non-random properties of networks.
+   \vskip 2em
+   Example of a question: is a given network more or less nested than expected by chance?
+\end{frame}
+
+\begin{frame}[fragile]{Null models}{WTF is nestedness?}
+   \begin{columns}[c]
+      \begin{column}{0.5\textwidth}
+         In a \emph{nested} network, \alert{a species with a degree $d_i$ interacts with a subset of the species with a degree $d_j$ so that $d_j>d_i$}.
+         \vskip 1em
+         The more this is true, the more a network is nested.
+       \end{column}
+      \begin{column}{0.5\textwidth}
+         \input{tik/nested.tikz}
+      \end{column}
+   \end{columns}
+   \vskip 2em
+   \begin{minted}[linenos]{splus}
+library(vegan)
+web = read.table('matrix.txt')
+nestednodf(web)
+   \end{minted}
+
 \end{frame}
 
 \begin{frame}{Null models}{The basic approach}

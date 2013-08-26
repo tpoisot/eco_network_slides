@@ -11,9 +11,9 @@
 \usepackage[normalem]{ulem} 
 \usepackage{amsmath}
 
-\usepackage[loosequotes,slides]{MinionPro}
+%\usepackage[loosequotes,slides]{MinionPro}
 
-\usepackage[defaultsans]{droidsans}
+\usepackage{bera,berasans,beramono}
 
 \usepackage{tikz}
 
@@ -32,11 +32,21 @@
 
 %\setbeamertemplate{background canvas}[vertical shading][top=clouds, bottom=clouds]
 
+\makeatletter
+\setbeamertemplate{background canvas}{%
+   \ifnum\c@framenumber=1%
+      \color{turquoise}\rule{\paperwidth}{\paperheight}
+   \fi%
+}
+\makeatother
+
 \setbeamercolor{normal text}{fg = midnight}
 \setbeamercolor{alerted text}{fg = pomegranate}
 
 \setbeamercolor{frametitle}{fg = belize}
 \setbeamercolor{framesubtitle}{fg = peter}
+
+\setbeamercolor{title}{fg = white}
 
 \setbeamercolor{structure}{fg = turquoise}
 
