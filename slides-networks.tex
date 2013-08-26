@@ -18,7 +18,8 @@
       \item A good way to harness complexity
       \item A solid mathematical foundation
       \item Elegant algorithms
-      \item That guy is going to talk about them for, like, two hours\ldots
+      \item Visualisations look \emph{awesome}
+      \item I'm going to talk about them for, like, two hours\ldots
    \end{itemize}
 \end{frame}
 
@@ -251,9 +252,17 @@ nestednodf(web)
 \end{frame}
 
 \begin{frame}{Null models}{The basic approach}
+   We want to simulate \emph{pseudo-random} networks that reproduce \emph{some} features of the empirical (observed) network.
+   \vskip 2em
+   For any empirically measured property $X$, we will have a distribution of $\mathcal{X}$.
+   \vskip 2em
+   We might want to test that $\sum(X-\mathcal{X})/n = 0$, \emph{i.e.} the observed property is not significantly different from the random expectation.
 \end{frame}
 
 \begin{frame}{Null models}{Controlling for mean degree}
+   This is formally called a \emph{Erd\"os--Renyi graph}. Each pair of nodes has a probability $\rho$ of being connected.
+   \vskip 2em
+   \alert{Exercise:} write a function in R filling a matrix with 0 and 1 at random.
 \end{frame}
 
 \begin{frame}{The niche model of food webs}
