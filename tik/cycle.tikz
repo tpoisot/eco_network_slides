@@ -1,0 +1,19 @@
+\centering
+\begin{tikzpicture}[auto, =>stealth', shorten >=1pt, thick]
+
+\tikzstyle{every node}=[circle, fill=turquoise, draw=none, text=white]
+\draw    (0,   3.6)  node (pred) {};
+
+\tikzstyle{every node}=[circle, fill=pomegranate, draw=none, text=white]
+\draw    (0,   2.4)    node (cons) {}
+         (1, 1.2)  node (in1) {}
+         (-1, 1.2) node (in2) {}
+         (0,   0)    node (ress) {};
+
+\draw (pred) -- (cons);
+\draw [draw = pomegranate] (cons) -- (in1);
+\draw [draw = pomegranate](cons) -- (in2);
+\draw [draw = pomegranate] (in1) -- (ress);
+\draw [draw = pomegranate] (in2) -- (ress);
+
+\end{tikzpicture}

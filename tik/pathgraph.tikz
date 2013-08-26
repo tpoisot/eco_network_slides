@@ -1,0 +1,17 @@
+\centering
+\begin{tikzpicture}[auto, =>stealth', shorten >=1pt, thick]
+
+\tikzstyle{every node}=[circle, fill=turquoise, draw=none, text=white]
+\draw     (-1, 1.2) node (in2) {4};
+\draw    (0,   2.4)    node (cons) {2}
+         (1, 1.2)  node (in1) {3}
+         (0,   0)    node (ress) {5}
+         (0,   3.6)  node (pred) {1};
+
+\draw (pred) -- (cons);
+\draw (cons) -- (in1);
+\draw (cons) -- (in2);
+\draw (in1) -- (ress);
+\draw (in2) -- (ress);
+
+\end{tikzpicture}

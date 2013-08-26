@@ -128,6 +128,19 @@
    If nodes $i$ and $j$ are connected, then \emph{there is a path of length 1 between them}. If they are connected through $k$, there is \emph{a path of length 2}.
 \end{frame}
 
+\begin{frame}{Cycles}
+   A \textbf{cycle} is a path from node $i$ to itself, visiting any number of nodes in between.
+   \vfill
+   \begin{columns}[c]
+      \begin{column}{0.5\textwidth}
+         \input{tik/path.tikz}
+      \end{column}
+       \begin{column}{0.5\textwidth}
+          \input{tik/cycle.tikz}
+       \end{column}
+   \end{columns}
+\end{frame}
+
 \begin{frame}{Reminder: multiplying matrices}
    \begin{itemize}
       \item Only \emph{square} matrices can be raised to an exponent (\alert{Exercise}: What of bipartite rectangular networks?)
@@ -143,6 +156,21 @@
    The number of paths of length $2$ between $i$ and $j$ is given by $$N^{(2)}_{ij} = \sum{k=1}^nA_{ik}A_{kj}$$.
    \vskip 2em
    This is generalized for paths of length $n$ to $$N^{(n)}_{ij} = (\mathbf{A}^n)_{ij} $$.
+\end{frame}
+
+\begin{frame}{Number of paths}{A little bit of programming}
+   \begin{columns}[c]
+      \begin{column}{0.5\textwidth}
+         \alert{Exercise}
+         \vskip 2em
+         Write this undirected network as an adjacency matrix, and calculate the number of paths of length 1, 2, \ldots, between species $1$ and $3$, and between species $1$ and $5$.
+         \vskip 2em
+         Reminder: $\mathbf{A}\times\mathbf{B}$ = \texttt{A \%*\% B}
+      \end{column}
+      \begin{column}{0.5\textwidth}
+         \input{tik/pathgraph.tikz}
+      \end{column}
+   \end{columns}
 \end{frame}
 
 \begin{frame}{Number of paths}{Find the number of cycles}
@@ -263,6 +291,14 @@ nestednodf(web)
    This is formally called a \emph{Erd\"os--Renyi graph}. Each pair of nodes has a probability $\rho$ of being connected.
    \vskip 2em
    \alert{Exercise:} write a function in R filling a matrix with 0 and 1 at random.
+\end{frame}
+
+\begin{frame}{Null models}{Controlling for node degree}
+   We want each node to receive and establish interactions (almost) as in the original network.
+   \vskip 1em
+   $$P(i\rightarrow j) = \frac{1}{2}\left(\frac{g_i}{d_i}+\frac{v_j}{d_j}\right)$$
+   \vskip 2em
+   \alert{Exercise:} Using operations on matrices, write a function to generate a random network in R.
 \end{frame}
 
 \begin{frame}{The niche model of food webs}
