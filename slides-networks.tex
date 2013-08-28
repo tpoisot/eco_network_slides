@@ -1,4 +1,4 @@
-\documentclass[usenames,professionalfonts,11pt,aspectratio=149]{beamer}
+\documentclass[mathserif,usenames,professionalfonts,11pt,aspectratio=149]{beamer}
 
 \input{options}
 
@@ -56,6 +56,21 @@
    The adjacency matrix $\mathbf{A}$ of a graph $G = (V,E)$ has elements $A_{ij}$ with value 1 if there is an edge between the node $V_i$ and the node $V_j$, and 0 otherwise.
    \vskip 2em
    It follows that $\sum_i\sum_j A_{ij} = |E|$.
+\end{frame}
+
+\begin{frame}{What is a network?}{From the graph to the matrix}
+   \begin{columns}[c]
+      \begin{column}{0.5\textwidth}
+         \input{tik/omni.tikz}
+      \end{column}
+      %
+      \begin{column}{0.5\textwidth}
+         \input{tik/omni-mat.tikz}
+      \end{column}
+   \end{columns}
+   ~
+   \vskip 3em
+   \alert{Exercise}: Re-draw this graph (and the matrix) if $C$ is carnivorous.
 \end{frame}
 
 \begin{frame}{What is a network?}{Edge direction}

@@ -1,0 +1,24 @@
+\centering
+\begin{tikzpicture}[auto, ->, =>stealth', shorten >=1pt, thick]
+
+\tikzstyle{every node}=[circle, fill=turquoise, draw=none, text=white]
+\draw    (1,   4)    node (pred) {P}
+         (2,   4)    node (cons) {C}
+         (3,   4)    node (ress) {R};
+
+\draw    (0,   3)    node (pred1) {P}
+         (0,   2)    node (cons1) {C}
+         (0,   1)    node (ress1) {R};
+
+\tikzstyle{every node}=[rectangle, fill=pomegranate, draw=none, text=white]
+\draw (2, 3) node (pc) {A};
+
+\tikzstyle{every node}=[rectangle, fill=wisteria, draw=none, text=white]
+\draw (3, 3) node (pr) {B};
+
+\tikzstyle{every node}=[rectangle, fill=orange, draw=none, text=white]
+\draw (3, 2) node (cr) {C};
+
+
+
+\end{tikzpicture}

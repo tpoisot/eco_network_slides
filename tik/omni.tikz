@@ -1,0 +1,15 @@
+\centering
+\begin{tikzpicture}[auto, ->, =>stealth', shorten >=1pt, thick]
+
+\tikzstyle{every node}=[circle, fill=turquoise, draw=none, text=white]
+\draw    (0,   3)    node (pred) {P}
+         (1.2, 1.5)  node (cons) {C}
+         (0,   0)    node (ress) {R};
+
+\draw [thick, draw = wisteria] (pred) -> (ress);
+\draw [thick, draw = orange] (cons) -> (ress);
+\path [draw = pomegranate] (pred) -> node [draw=none, fill=none, text=black]{A}(cons);
+\path [draw = wisteria] (pred) -> node [draw=none, fill=none, text=black]{B}(ress);
+\path [draw = orange] (cons) -> node [draw=none, fill=none, text=black]{C}(ress);
+
+\end{tikzpicture}
