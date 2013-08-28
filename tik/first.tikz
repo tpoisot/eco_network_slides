@@ -1,0 +1,10 @@
+\centering
+\begin{tikzpicture}[auto, ->, =>stealth', shorten >=1pt, very thick]
+
+\tikzstyle{every node}=[circle, fill=turquoise, draw=none, text=white]
+\draw    (0,   0)    node (1) {1}
+         (4,  0)  node (2) {2};
+
+\path (1) -> node [draw=none, fill=none, text=black]{1 $\rightarrow$ 2}(2);
+
+\end{tikzpicture}
