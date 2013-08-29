@@ -15,7 +15,7 @@
 
 \begin{frame}{Why should I care about networks?}
    \begin{itemize}
-      \item A good way to harness complexity
+      \item A good way to harness complexity (especially of emergent niche patterns)
       \item A solid mathematical foundation
       \item Elegant algorithms
       \item Visualisations look \emph{awesome}
@@ -56,8 +56,6 @@
    Networks are often represented by their \textbf{adjacency matrix}.
    \vskip 2em
    The adjacency matrix $\mathbf{A}$ of a graph $G = (V,E)$ has elements $A_{ij}$ with value 1 if there is an edge between the node $V_i$ and the node $V_j$, and 0 otherwise.
-   \vskip 2em
-   It follows that $\sum_i\sum_j A_{ij} = |E|$.
 \end{frame}
 
 \begin{frame}{What is a network?}{From the graph to the matrix}
@@ -82,7 +80,7 @@
    \vskip 2em
    In a \textbf{directed graph}, there are at most $|V|(|V|-1)$ edges if there are no \emph{self-loops}.
    \vskip 2em
-   \alert{Exercise}: What is the maximal size of a graph of order $n$ if there are self-loops?
+   \alert{Exercise}: What is the maximal size of a graph of order $n$ if there are self-loops? What is the \emph{minimal} size of the same graph?
 \end{frame}
 
 \begin{frame}{What is a network?}{Edge weight}
@@ -190,6 +188,23 @@
    \end{columns}
 \end{frame}
 
+\begin{frame}[fragile]{Number of paths}{A little bit of programming}
+   \begin{minted}[linenos]{splus}
+matPow = function(A,n)
+{
+   for(i in c(1:(n-1))) A = A%*%A
+   return(A)
+}
+
+A = matrix(0, ncol=5, nrow=5)
+A[1,2] = A[2,4] = A[2,3] = A[4,5] = A[3,5] = 1
+A[2,1] = A[4,2] = A[3,2] = A[5,4] = A[5,3] = 1
+for(pathLength in c(0:5)) print(matPow(A, pathLength))
+   \end{minted}
+   \vskip 2em
+   \alert{Exercise}: What happens if the edges are directed (\emph{e.g.} from lower to higher numbers)?
+\end{frame}
+
 \begin{frame}{Number of paths}{Find the number of cycles}
    Based on the previous result, we can identify the number of paths of size $n$ from one node to itself, $(\mathbf{A}^n)_{ii}$.
    \vskip 2em
@@ -293,7 +308,6 @@ library(vegan)
 web = read.table('matrix.txt')
 nestednodf(web)
    \end{minted}
-
 \end{frame}
 
 \begin{frame}{Null models}{The basic approach}
@@ -315,11 +329,12 @@ nestednodf(web)
    \vskip 1em
    $$P(i\rightarrow j) = \frac{1}{2}\left(\frac{g_i}{d_i}+\frac{v_j}{d_j}\right)$$
    \vskip 2em
-   \alert{Exercise:} Using operations on matrices, write a function to generate a random network in R.
+   \alert{Exercise:} Using operations on matrices, write a function to generate a random network in R, conserving either the connectance, or the degrees.
 \end{frame}
 
 \begin{frame}{The niche model of food webs}
-
+   \begin{columns}[c]
+   \end{columns}
 \end{frame}
 
 \end{document}
