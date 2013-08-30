@@ -354,6 +354,16 @@ nestednodf(web)
 \end{frame}
 
 \begin{frame}{The niche model of food webs}
+   \begin{enumerate}
+      \item Draw $n$ uniformly from $[0;1]$
+      \item Draw $r'_i$ from a $\beta$ from $[0;1]$ with expected value $2\times C$
+      \item $r_i = r'_i\times n_i$
+      \item Species with the lowest $n_i$ have $r_i = 0$
+      \item Draw $c_i$ uniformly from $[r_i/2 ; n_i]$
+   \end{enumerate}
+\end{frame}
+
+\begin{frame}{The niche model of food webs}
    \alert{Exercice}
    \vskip 2em
    Program a R version of the NMFW.
